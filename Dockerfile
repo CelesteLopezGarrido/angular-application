@@ -1,11 +1,12 @@
 #Primera Etapa
 FROM node:14-alpine as build-step
+RUN apk add chromium
+ENV CHROME_BIN='/usr/bin/chromium-browser'
 RUN mkdir -p /app
 WORKDIR /app
 COPY package.json /app
 RUN npm install
 COPY . /app
-ENV CHROME_BIN=/usr/bin/google-chrome
 RUN npm run build --prod
 
 #Segunda Etapa
