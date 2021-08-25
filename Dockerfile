@@ -5,6 +5,7 @@ WORKDIR /app
 COPY package.json /app
 RUN npm install
 COPY . /app
+ENV CHROME_BIN=/usr/bin/google-chrome
 RUN npm run build --prod
 
 #Segunda Etapa
