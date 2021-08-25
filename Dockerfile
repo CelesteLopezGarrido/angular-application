@@ -1,14 +1,20 @@
-#Primera Etapa
-FROM node:14-alpine as build-step
-RUN apk add chromium
-ENV CHROME_BIN='/usr/bin/chromium-browser'
-RUN mkdir -p /app
-WORKDIR /app
-COPY package.json /app
-RUN npm install
-COPY . /app
-RUN npm run build --prod
+FROM node:10.16.0-alpine
 
-#Segunda Etapa
-FROM nginx:1.17.1-alpine
-COPY --from=build-step /app/dist/angularApplication /usr/share/nginx/html
+RUN apk add --no-cache \
+      chromium \
+      nss \
+      freetype \
+      freetype-dev \
+      harfbuzz \
+      ca-certificates \
+      ttf-freefont
+
+ENV CHROME_BIN /usr/bin/chromium-browser
+
+WORKDIR /usr/app/
+
+COPY . ./
+
+RUN npm install
+
+CMD npm run test-ci
