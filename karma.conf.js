@@ -1,6 +1,6 @@
 // Karma configuration file, see link for more information
 // https://karma-runner.github.io/1.0/config/configuration-file.html
-process.env.CHROME_BIN = require('puppeteer').executablePath();
+process.env.CHROME_BIN = "/workspace/source/node_modules/puppeteer/.local-chromium/linux-901912/chrome-linux//Chromium.app/Contents/Linux/Chromium"
 console.log("--------------------------------CHROME_BIN", require('puppeteer').executablePath());
 console.log("--------------------------------CHROME_BIN2", process.env);
 
