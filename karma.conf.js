@@ -5,7 +5,7 @@ const isDocker = require('is-docker')();
 
 module.exports = function (config) {
   config.set({
-    browsers: ['ChromeHeadless', 'ChromeCustom'],
+    browsers: ['ChromeCustom'],
     customLaunchers: {
       ChromeCustom: {
         base: 'ChromeHeadless',
