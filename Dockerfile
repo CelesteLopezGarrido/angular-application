@@ -1,5 +1,5 @@
 #Primera Etapa
-FROM node:14-alpine as build-step
+FROM node:8.2.1 as build-step
 
 # Install Google Chrome
 RUN wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | apt-key add -
