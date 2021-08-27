@@ -1,10 +1,9 @@
 // Karma configuration file, see link for more information
 // https://karma-runner.github.io/1.0/config/configuration-file.html
-const isDocker = require('is-docker')();
 
 module.exports = function (config) {
   config.set({
-    browsers: ['customLaunchers'],
+    browsers: ['ChromeCustom'],
     customLaunchers: {
       ChromeCustom: {
         base: 'ChromeHeadless',
