@@ -8,7 +8,7 @@ module.exports = function (config) {
     customLaunchers: {
       ChromeCustom: {
         base: 'ChromeHeadless',
-        flags: isDocker ? ['--no-sandbox'] : []
+        flags: ['--no-sandbox']
       }
     },
     basePath: '',
